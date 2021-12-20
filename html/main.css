@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+
+#container {
+  position: absolute;
+  width: 876px;
+  height: 468px;
+  
+  background: #FFFFFF;
+  border-radius: 10px;
+
+  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 50%;
+}
+
+
+.waves{
+  border-radius: 10px;
+}
+
+
+#logo {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+
+#bankName{
+  position: absolute;
+  left: 100px;
+  top: 0px;
+
+  font-family: Secular One;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 34px;
+  line-height: 49px;
+  
+  color: #0099FF;
+}
+
+
+.buttonMenuBackMenu{
+  position: absolute;
+  left: 80px;
+  top: 120px;
+  width: 288px;
+  height: 84px;
+  mix-blend-mode: normal;
+  background-color: #0099ff80;
+  border-radius: 20px;
+  border: solid #0099ff3a 10px;
+  opacity: 90%;
+  transition: .5s;
+  display: flex;
+  justify-content: center;
+}
+
+.buttonMenuBackMenu:hover{
+  border: solid #0099ff 12px;
+  transition: .5s;
+  cursor: pointer;
+}
+
+.buttonMenuBackMenu h2{
+  position: relative;
+  text-align: left;
+  top: -5px;
+  left: -5px;
+  color: white;
+
+  font-family: Secular One;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 35px;
+  /* identical to box height */
+  
+  text-align: center;
+  
+  color: #FFFFFF;
+}
+
+.buttonMenuBackMenu img{
+  position: relative;
+  top: 10px;
+  left: -20px;
+}
+
+.buttonMenu{
+  position: absolute;
+  left: 80px;
+  top: 90px;
+  width: 288px;
+  height: 84px;
+  mix-blend-mode: normal;
+  background-color: #0099ff80;
+  border-radius: 20px;
+  border: solid #0099ff3a 10px;
+  opacity: 90%;
+  transition: .5s;
+  display: flex;
+  justify-content: center;
+}
+
+.buttonMenu:hover{
+  border: solid #0099ff 12px;
+  transition: .5s;
+  cursor: pointer;
+}
+
+.buttonMenu h2{
+  position: relative;
+  text-align: left;
+  top: -5px;
+  left: -5px;
+  color: white;
+
+  font-family: Secular One;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 35px;
+  /* identical to box height */
+  
+  text-align: center;
+  
+  color: #FFFFFF;
+}
+
+.buttonMenu img{
+  position: relative;
+  top: 10px;
+  left: -20px;
+}
+
+
+#infoBar{
+  position: absolute;
+  right: 50px;
+  top: 140px;
+  width: 396px;
+  height: 135px;
+  mix-blend-mode: normal;
+  background-color: #0099ff80;
+  border-radius: 20px;
+  border: solid #0099ff3a 10px;
+  opacity: 90%;
+  transition: .5s;
+  display: flex;
+  justify-content: center;
+  font-family: Secular One;
+  color: white;
+  
+}
+
+#infoBar h2{
+  position: absolute;
+  width: 189px;
+  height: 26px;
+  left: 20px;
+  top: 0px;
+
+  font-family: Secular One;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+
+  color: #FFFFFF;
+}
+
+#infoBar p{
+  position: absolute;
+  width: 189px;
+  height: 26px;
+  left: -38px;
+  top: 20px;
+
+  font-family: Secular One;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 26px;
+  text-align: center;
+
+  color: #ffffff7c;
+}
+
+#infoBar h3{
+  position: absolute;
+  width: 300px;
+  text-align: center;
+  height: 80px;
+  left: 100px;
+  top: 0px;
+
+
+  font-family: Secular One;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 70px;
+  /* identical to box height */
+  
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+#infoBar input{
+  width: 280px;
+  height: 60px;
+  position: absolute;
+  top: 60px;
+  outline: none;
+  text-align: center;
+  border-radius: 20px;
+  background-color: #0099ff96;
+  font-family: Secular One;
+  border:2px solid white;
+  color: white;
+  font-size: 20px;
+  transition: .5s;
+}
+#infoBar input:hover{
+  border: 5px solid white;
+  transition: .5s;
+}

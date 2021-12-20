@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id="container">
+
+        <img src="./Assets/logo.svg" id="logo" alt="">
+        <h2 id="bankName">Kurdistan Bank</h2>
+
+        <div id="mainMenu"style="display: block;">
+            
+    
+    
+            <button class="buttonMenu" id="withdrawButton">
+                <img src="./Assets/card.svg">
+                <h2>ڕاکێشان</h2>
+            </button>
+    
+            <button class="buttonMenu" id="depositButton" style="top: 180px;">
+                <img src="./Assets/card.svg">
+                <h2>دانان</h2>
+            </button>
+
+            <button class="buttonMenu" id="transferButton" style="top: 270px;">
+                <img src="./Assets/card.svg">
+                <h2>گواستنەوە</h2>
+            </button>
+    
+    
+    
+            <div id="infoBar" >
+                <h2 style="left: -10px;">Welcome User!</h2>
+                <p>You have:</p>
+                <h3 id="moneyAmount">$10000</h3>
+            </div>
+        </div>
+
+        <div id="withdrawMenu" style="display: none;">
+            <button class="buttonMenuBackMenu" id="backToMenuButton">
+                <img src="./Assets/back.svg" style="width:40px;">
+                <h2>گەڕانەوە</h2>
+            </button>
+
+            <button class="buttonMenu" id="completeWithdrawButton" style="top: 230px;">
+                <img src="./Assets/card.svg">
+                <h2>ڕاکێشان</h2>
+            </button>
+
+            <div id="infoBar" >
+                <h2 style="left: -29px;">ڕاکێشان</h2>
+                <p style="left: -6px;">بڕی پارەکە:</p>
+                <input type="number" id="withdrawInput">
+            </div>
+        </div>
+
+        <div id="depositMenu" style="display: none;">
+            <button class="buttonMenuBackMenu" id="backToMenuButton">
+                <img src="./Assets/back.svg" style="width:40px;">
+                <h2>گەڕانەوە</h2>
+            </button>
+
+
+            <button class="buttonMenu" id="completeDepositButton" style="top: 230px;">
+                <img src="./Assets/card.svg">
+                <h2>دانان</h2>
+            </button>
+
+            <div id="infoBar" >
+                <h2 style="left: -29px;">گەڕانەوە</h2>
+                <p style="left: -6px;">بڕی پارەکە:</p>
+                <input type="number" id="depositInput">
+            </div>
+        </div>
+
+        <div id="transferMenu" style="display: none;">
+            <button class="buttonMenuBackMenu" id="backToMenuButton">
+                <img src="./Assets/back.svg" style="width:40px;">
+                <h2>گەڕانەوە</h2>
+            </button>
+
+
+            <button class="buttonMenu" id="completeTransferButton" style="top: 230px;">
+                <img src="./Assets/card.svg">
+                <h2>گواستنەوە</h2>
+            </button>
+
+            <div id="infoBar" style="height: 260px; top: 75px;">
+                <h2 style="left: -29px;">گواستنەوە</h2>
+                <p style="left: -6px;">بڕی پارەکە:</p>
+                <input type="number" id="transferAmountInput">
+
+                <p style="left: -25px; top: 135px;">Player Id:</p>
+                <input type="number" id="transferIdInput" style="top: 175px;">
+            </div>
+        </div>
+
+
+
+        <img  class="waves"style="position: absolute; bottom: 0; overflow: hidden;" src="./Assets/Vector.svg" alt="">
+        <img class="waves" style="position: absolute; bottom: 0; overflow: hidden;" src="./Assets/Vector-1.svg" alt="">
+
+
+
+    </div>
+    <script src="./index.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <script>
+        $(document).ready(function(){
+
+
+
+
+
+
+            $("#completeWithdrawButton").click(function(){
+                var withdrawInput= $('#withdrawInput').val();
+                if(withdrawInput.length  > 0){
+                    $("#withdrawMenu").fadeOut(500)
+                    $("#mainMenu").delay(500).fadeIn(500)
+                    $.post('http://rc_Bank/withdrawl', JSON.stringify({
+                        withdrawl : withdrawInput,
+                    })); 
+                }
+
+                
+                
+            });
+            $("#completeDepositButton").click(function(){
+                var depositInput= $('#depositInput').val();
+                if(depositInput.length  > 0){
+                    $("#depositMenu").fadeOut(500)
+                    $("#mainMenu").delay(500).fadeIn(500)
+                    $.post('http://rc_Bank/deposit', JSON.stringify({
+                        amountw : depositInput,
+                    })); 
+                }
+
+                
+                
+            });
+
+            $("#completeTransferButton").click(function(){
+                var transferAmountInput= $('#transferAmountInput').val();
+                var transferIdInput= $('#transferIdInput').val();
+                if(transferAmountInput.length  > 0){
+
+                    if(transferIdInput.length > 0){
+                        $("#transferMenu").fadeOut(500)
+                        $("#mainMenu").delay(500).fadeIn(500)
+                        $.post('http://rc_Bank/transfer', JSON.stringify({
+                            transferAmountInput : transferAmountInput,
+                            transferIdInput : transferIdInput,
+                        })); 
+                    }
+                    
+                }
+
+                
+                
+            });
+
+
+
+            $("#transferButton").click(function(){
+                $("#mainMenu").fadeOut(500)
+                $("#transferMenu").delay(500).fadeIn(500)
+                
+            });
+            $("#withdrawButton").click(function(){
+                $("#mainMenu").fadeOut(500)
+                $("#withdrawMenu").delay(500).fadeIn(500)
+                
+            });
+            $("#depositButton").click(function(){
+                $("#mainMenu").fadeOut(500)
+                $("#depositMenu").delay(500).fadeIn(500)
+                
+            });
+            $(".buttonMenuBackMenu").click(function(){
+                $("#withdrawMenu").fadeOut(500)
+                $("#depositMenu").fadeOut(500)
+                $("#transferMenu").fadeOut(500)
+                $("#mainMenu").delay(500).fadeIn(500)
+                
+            });
+            
+        });
+    </script>
+</body>
+</html>
